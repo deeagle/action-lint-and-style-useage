@@ -16,5 +16,8 @@ jobs:
       - name: local repo hello
         run:  "echo from local repo action!"
 
-  shared:
+  shared-v1:
     uses: deeagle/action-lint-and-style/.github/workflows/hello-action.yml@v0.2
+
+  shared-v2:
+    uses: deeagle/action-lint-and-style/.github/actions/hello-action.yml@main
