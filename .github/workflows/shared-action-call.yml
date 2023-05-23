@@ -1,0 +1,20 @@
+name: Shared-Action-Call
+on:
+  push:
+    branches:
+      - main
+      - dev/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: local repo hello
+        run:  "echo from local repo action!"
+
+  shared:
+    uses: deeagle/action-lint-and-style/.github/workflows/hello-action.yml@v0.2
